@@ -97,4 +97,15 @@ def totalToFreq(data,fromYear, toYear):
             lines.append(str(curYear) + ',' + name + ',' + sex + ',' + str(freq))
     return lines
 
+#given filename, return a dict of 4 nparrays - year, name, gender, freq
+def getNumpyArrays(filename='../res/testbirths.csv'):
+    temparry = ([], [], [], [])
+    with open(filename) as f:
+        for line in f:
+            vals = line.strip().split(',')
+            for arry, val in zip(temparry, vals):
+                arry.append(val)
+    return {'year' : np.array(temparry[0]), 'name' : np.array(temparry[1]), 'gender' : np.array(temparry[2]), 'freq' : np.array(temparry[3])}
+
+
     #end cleaning functions
