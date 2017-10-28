@@ -1,4 +1,5 @@
 import csv
+import numpy as np
 
 #Reads a csv file into a list of tuples
 def getBirths(fileName):
@@ -27,7 +28,6 @@ def writeToFile(data, filename):
     for d in data:
             f.write("{}\n".format(d))
     f.close()
-
 
 births = getBirths('../res/births-post-1914.csv')
 #totals = getTotals(births)

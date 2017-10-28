@@ -8,3 +8,20 @@ The names are randomly mashed together. Specifically, the first name is randomly
 
 Vowel training set:
 The names are concatenated along a vowel.
+
+
+
+Files:
+
+decoder.py:
+-loads dataset
+-converts strings to number vectors
+-loads dataset into numpy arrays:
+ >year
+ >name
+ >gender
+ >frequency
+   
+NN.py:
+ -creates the NN with Keras
+ -trains it on our data
