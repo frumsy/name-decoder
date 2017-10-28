@@ -9,7 +9,37 @@ The names are randomly mashed together. Specifically, the first name is randomly
 Vowel training set:
 The names are concatenated along a vowel.
 
+stoint():
+ -converts a string to an integer
+ -
+ 
 
+
+NN:
+feed forward convolutional NN
+input:
+-age1
+-age2
+-gender1
+ >0/1
+-gender2
+ >0/1
+-mashedname
+ >toint(mashedname)
+
+Hidden layer:
+ -dense
+ -4 nodes
+
+output:
+-index1
+-index2
+
+errfunction:
+111      .5 * .5
+110      .9 * .5
+101      .8 * .5
+100      .3 * .5
 
 Files:
 
@@ -21,7 +51,5 @@ decoder.py:
  >name
  >gender
  >frequency
-   
-NN.py:
- -creates the NN with Keras
- -trains it on our data
+
+
