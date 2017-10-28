@@ -1,4 +1,5 @@
 import csv
+import numpy as np
 
 combinedName = ""
 splitPoint = 0
@@ -39,12 +40,10 @@ def writeToFile(data, filename):
             f.write("{}\n".format(d))
     f.close()
 
-
 births = getBirths('ssa-births.csv')
 totals = getTotals(births)
 print(totals['Marry'])
 popularNames = sortByPopular(births)
-
 
 def getLeft(splitPoint):
     return combinedName[:splitPoint]
@@ -52,6 +51,16 @@ def getLeft(splitPoint):
 def getRight(splitPoint):
     return combinedName[splitPoint:]
 
+
+#given filename, return a dict of 4 nparrays - year, name, gender, freq
+def getNumpyArrays(filename='../res/testbirths.csv'):
+    temparry = ([], [], [], [])
+    with open(filename) as f:
+        for line in f:
+            vals = line.strip().split(',')
+            for arry, val in zip(temparry, vals):
+                arry.append(val)
+    return {'year' : np.array(temparry[0]), 'name' : np.array(temparry[1]), 'gender' : np.array(temparry[2]), 'freq' : np.array(temparry[3])}
 
 
 """
