@@ -108,7 +108,7 @@ def getNumpyArrays(filename='../res/testbirths.csv'):
     return {'year' : np.array(temparry[0]), 'name' : np.array(temparry[1]), 'gender' : np.array(temparry[2]), 'freq' : np.array(temparry[3])}
 
 #returns an int version of a string based purely on concatenated ascii value
-def stoint(string):
+def strToInt(string):
     return int(reduce(lambda i, c: i+str(ord(c)), string, ''))
 
     #end cleaning functions
